@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/css/home.css" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="todo-container">
+            <h1 id="app-header">TODO App</h1>
+            <form method="POST" action="/add-todo">
+                <div id="task-input">
+                    <label for="description"><b>DESCRIPTION</b></label>
+                    <br>
+                    <input type="text" id="description" name="description" placeholder="What do you need to do ?" required>
+                </div>
+                <div id="date-category-input-container">
+                    <div id="category-container">
+                        <label for="category"><b>CATEGORY</b></label>
+                        <br>
+                        <select name="category" required id="category">
+                            <option selected>Choose a category</option>
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="school">School</option>
+                            <option value="cleaning">Cleaning</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <div id="seperator">
+
+                    </div>
+                    <div id="date-container">
+                        <label for="date"><b>DUE DATE</b></label>
+                        <br>
+                        <input type="date" id="date" placeholder="dd/mm/yyyy" required>
+                    </div>
+                </div>
+                <button id="submit" type="submit"><b><i class="fas fa-plus" style="margin-right: 5px;"></i>Add Task</b></button>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="/js/home.js" type="text/javascript"></script>
+    </body>
+</html>
