@@ -8,8 +8,14 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     </head>
     <body>
+
+        <!-- todo-app -->
+
         <div id="todo-container">
             <h1 id="app-header">TODO App</h1>
+
+            <!-- add-todos-form -->
+
             <form method="POST" action="/add-todo">
                 <div id="task-input">
                     <label for="description"><b>DESCRIPTION</b></label>
@@ -40,11 +46,16 @@
                 </div>
                 <button id="submit-button" type="submit"><b><i class="fas fa-plus" style="margin-right: 5px;"></i>Add Task</b></button>
             </form>
+
+
+            <!-- delete-todos-form -->
+
+
             <form method="POST" action="/delete-todos" id="delete-todos">
                 <button type="submit" id="delete"><b><i class="far fa-trash-alt" style="margin-right: 5px;"></i>Delete Task</b></button>
                 <% for(let todo of todo_list) {%> 
-                    <div id="todo">
-                        <input type="checkbox" name="task" value="<%= todo.id %>">
+                    <div id="todo" class="">
+                        <input id="todo-checkbox" type="checkbox" name="task" value="<%= todo.id %>">
                         <div id="todo-details">
                             <p><b><%= todo.description%></b></p>
                             <span><i class="fas fa-calendar-alt" style="margin-right: 5px;"></i><%= todo.date%></span>

@@ -11,18 +11,26 @@ body{
     align-items: center;
 }
 
+/* todo-app */
+
 #todo-container{
     border: 1px solid black;
     width: 70%;
     height: auto;
     min-width: 700px;
 }
+
+/* heading */
+
 #app-header{
     text-align: center;
     border-bottom: 1px solid lightgrey;
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
+
+/* todo-add-form */
+
 form{
     position: relative;
 }
@@ -84,6 +92,8 @@ form{
     z-index: 100;
 }
 
+/* todo-delete-form */
+
 #delete-todos{
     padding-top: 10%;
     height: 50%;
@@ -115,7 +125,7 @@ form{
     border: 0px;
     z-index: 100;
 }
-
+/* for positioning of two buttons */
 @media screen and (max-width: 1600px){
     #submit-button{
         top: 112%;
@@ -169,4 +179,8 @@ form{
 }
 #todo:nth-child(2n+1) #work{
     background-color: purple;
+}
+/* for overline */
+.overline{
+    text-decoration: line-through;
 }

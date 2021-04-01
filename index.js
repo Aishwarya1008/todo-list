@@ -5,11 +5,14 @@ const db = require('./config/mongoose');
 const Todos = require('./models/todos');
 var ObjectId = require('mongodb').ObjectID;
 
+// fire express
 const app = express();
 
+// setting view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+//providing path of the static files
 app.use(express.static('assets'));
 app.use(express.urlencoded());
 
@@ -26,6 +29,7 @@ app.use(express.urlencoded());
 //     }
 // ];
 
+// home page of our app
 app.get('/', function(req, res){
     Todos.find({}, function(err, todos){
         if(err){
@@ -41,11 +45,15 @@ app.get('/', function(req, res){
     
 });
 
+//post request to add todo
+
 app.post('/add-todo', function(req, res){
     // console.log(req.body);
     Todos.create(req.body);
     res.redirect('back');
 });
+
+//post request to delete todo
 
 app.post('/delete-todos', function(req, res){
     var ids = req.body.task;
@@ -73,6 +81,8 @@ app.post('/delete-todos', function(req, res){
     }
     
 });
+
+//listening our express server on given port
 
 app.listen(port, function(err){
     if(err){

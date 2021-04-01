@@ -6,3 +6,11 @@
 //     console.log(longDate);
 // }
 
+var deleteTodos = $('#delete-todos input');
+console.log(deleteTodos);
+
+for(let i = 0; i<deleteTodos.length; i++){
+    deleteTodos.eq(i).click(function(){
+        $(this).parent().toggleClass('overline');
+    });
+}
