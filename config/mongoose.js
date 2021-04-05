@@ -8,3 +8,5 @@ db.once('open', function() {
   // we're connected!
   console.log('connection successful');
 });
+
+module.exports = db;
